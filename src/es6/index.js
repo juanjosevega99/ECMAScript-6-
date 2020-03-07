@@ -1,4 +1,5 @@
 // es6
+//DEFAULT PARAMS Y CONCATENACION
 function newFunction(name = "juan", age = 20, country = "CO") {
   console.log(name, age, country);
 }
@@ -12,6 +13,7 @@ console.log(epicPhrase);
 let epicPhrase2 = `${hello} ${world}`;
 console.log(epicPhrase2);
 
+//LET y CONST, Multilínea, Spread Operator y Desestructuración
 let lorem = `frase epica
 ahora es otra frase epica
 `;
@@ -33,3 +35,37 @@ let team2 = ["Camila", "Maria", "Kim"];
 let education = ["David", ...team1, ...team2];
 
 console.log(education);
+
+//Arrow Functions, Promesas y Parámetros en objetos
+let name = "Juan";
+let age = 20;
+
+obj = { name, age };
+console.log(obj);
+
+const names = [
+  { name: "Juan", age: 20 },
+  { name: "Ana", age: 18 }
+];
+
+let listOfName = names.map(item => console.log(item.name));
+
+let listOfName2 = (name, age, country) => {};
+let listOfName3 = name => {};
+
+const square = num => num * num;
+
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Hey!");
+    } else {
+      reject("Ups!");
+    }
+  });
+};
+
+helloPromise()
+  .then(response => console.log(response))
+  .then(() => console.log("Hola"))
+  .catch(error => console.log(error));
